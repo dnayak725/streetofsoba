@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-logo">
+      Streets of Soba
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="items-page"> 
+  <!-- <ion-row>
+    <ion-col size="12">
+      <ion-title class="ion-logo">
+        <ion-img src="../../assets/img/logo.png"></ion-img>
+      </ion-title>
+    </ion-col>
+   </ion-row> -->
+  <ion-list lines="none" >  
+      <ion-item *ngFor ="let data of itemData; let i = index">
+        <ion-label (click)="products(i)" [style.background]="'url('+data.image+') center right / 190px no-repeat'">
+          <h2>{{data.category_name}}</h2> 
+        </ion-label>
+      </ion-item>  
+  </ion-list>
+</ion-content>

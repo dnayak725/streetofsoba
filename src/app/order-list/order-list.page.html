@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-title class="ion-poke-logo">
+        Streets of Soba
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-row class="product-details-header" >
+    <ion-col size="12">
+      <h3 class="ion-text-center">Order List</h3>
+    </ion-col>
+  </ion-row>
+  <ng-container *ngFor="let i of itemCart; let index = index">
+  
+      <ion-row class="count-prod separator">
+        <ion-col size="6">
+          <h1>{{i.item_name}}
+          </h1>
+          <!-- <h2 *ngIf="service.coupon == false">{{i.quantity * (i.base_price + i.additional_price ) | number : '1.2-2'}}</h2> -->
+          <ng-container>
+            {{sum(i.quantity)}}
+          </ng-container>
+          <ng-container *ngIf="service.coupon == true && i.quantity>=2; else elseNotDone">
+            <h2><span class="discount-span">{{i.quantity * (i.base_price + i.additional_price ) | number : '1.2-2'}}</span>{{i.quantity * (i.base_price + i.additional_price )-(i.base_price + i.additional_price )*sumdata | number : '1.2-2'}}</h2>
+          </ng-container>
+      
+          <ng-template #elseNotDone>
+                      <h2>{{i.quantity * (i.base_price + i.additional_price ) | number : '1.2-2'}}</h2>
+
+          </ng-template>
+          <!-- <h2 *ngIf="service.coupon == true && i.quantity>=2">{{i.quantity * (i.base_price + i.additional_price )-(i.base_price + i.additional_price )*sumdata | number : '1.2-2'}}<span class="discount-span">{{i.quantity * (i.base_price + i.additional_price ) | number : '1.2-2'}}</span></h2> -->
+        </ion-col>
+        <ion-col size="6">
+          <ion-item lines="none" class="counter">
+            <button ion-button (click)="cartQuantity(index,'-')"><ion-img src="../assets/img/minus.png"></ion-img></button>
+            <span>{{i.quantity}}</span>
+            <button ion-button (click)="cartQuantity(index,'+')"><ion-img src="../assets/img/plus.png"></ion-img></button>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button color="light" fill="outline" class="remove" expand="block" (click)="removeCart(i)">Remove</ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button color="primary" class="view" expand="block" (click)="editItem(index )">View/Edit</ion-button>
+        </ion-col>
+        </ion-row>
+      
+  </ng-container>
+  <ng-container *ngFor="let i of service.singleItemCart">
+    <ng-container *ngIf="i.cart == true">
+      <ion-row class="count-prod separator">
+        <ion-col size="6">
+          <h1>{{i.item.item_name}}
+          </h1>
+          <h2>{{i.quantity * i.item.basic_price | number : '1.2-2'}}</h2>
+         
+        </ion-col>
+        <ion-col size="6">
+          <ion-item lines="none" class="counter">
+            <button ion-button (click)="singleCartDecrement(i.item)"><ion-img src="../assets/img/minus.png"></ion-img></button>
+            <span>{{i.quantity}}</span>
+            <button ion-button (click)="singleCartIncrement(i.item)"><ion-img src="../assets/img/plus.png"></ion-img></button>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button color="light" fill="outline" class="remove" expand="block" (click)="deleteSingleItem(i.item)">
+            Remove</ion-button>
+        </ion-col>
+       
+      </ion-row>
+     
+    </ng-container>
+  </ng-container>
+  
+  <h1 *ngIf="totalValue == 0" style="    text-align: center;margin-top: 100px;">No Item In Your Cart</h1>
+</ion-content>
+
+<ion-footer class="ion-no-border product_footer">
+  <h1 (click)="coupon()" class="coupon_add">Apply Promotion</h1>
+  <ion-row class="data-footer">
+    <ion-col size="12">
+      <h1 class="ion-text-center">Total <strong>${{totalValue | number : '1.2-2'}}</strong></h1>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="6">
+      <ion-button color="medium" expand="full" (click)="orderListBack()">Back</ion-button>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button color="primary" expand="full" (click)="checkout()">Checkout</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

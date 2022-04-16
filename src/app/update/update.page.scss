@@ -1,0 +1,106 @@
+.ion-poke-logo{
+    background: url(../../assets/img/banner-11.png) no-repeat right top / 88%;
+    font-size:40px;
+    font-weight: 600;
+    padding:60px 40px;
+}
+.product_footer ion-col {
+    margin: 0;
+    padding: 0;
+}
+.product_footer ion-col ion-button {
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;
+    font-size: 34px;
+    height: 80px;
+    letter-spacing: inherit;
+    font-weight: 600;
+}
+.product-details ion-item ion-label {
+    border: 2px solid #FDBB50;
+    border-radius: 15px;
+    padding: 24px;
+    margin: 10px 50px;
+}  
+.product-details ion-label:hover, .product-details ion-label:focus {
+    color:#FDBB50;
+    margin: 5px 0;
+} 
+.product-details-header ion-avatar {
+    width: 170px;
+    height: 170px;
+    margin-top: 20px;
+}
+.product-details-header h3{
+    font-size: 40px;
+    font-weight: 600;
+}
+.product-details-header p{
+    font-size: 24px;
+    font-weight: 400;
+    margin-top: 0;
+}
+ion-row.product-details-header{
+    padding: 0 40px;
+    margin-top: 30px;
+}
+.count-prod button {
+    font-size: 60px;
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;  
+}
+.count-prod span {
+    font-size: 36px;
+    height: 70px;
+    text-align: center;
+    border: 2px solid #FDBB50;
+    margin: 0 10px;
+    border-radius: 10px;
+    line-height: 60px;
+    font-weight: 600;
+    width: 70px;
+}
+.ion-align-self-center { 
+    left:35%;
+    margin-bottom: 20px;
+} 
+.product-details ion-item ion-label.added {
+    border: 2px solid #FDBB50;
+    background:#FDBB50;
+    color: black;
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin: 5px 30px;
+}
+.product-details ion-item ion-label span {
+    font-weight: 700;
+    font-size: 30px;
+    
+}
+.product-details ion-item ion-label h2 {
+    font-size: 20px;
+    font-weight: 600;
+} 
+.one{background-color: #FDBB50 !important;}
+.two
+{background-color: #000000 !important;color: white !important;} 
+.three
+    {background-color: #fffdb4 !important; border: 2px solid #fffdb4!important;} 
+
+.item .two, .item .two{
+    text-overflow: inherit;
+    white-space: inherit;
+    overflow: inherit;
+}
+.item .three, .item .three{
+    text-overflow: inherit;
+    white-space: inherit;
+    overflow: inherit;
+}
+.item .one, .item .one{
+    text-overflow: inherit;
+    white-space: inherit;
+    overflow: inherit;
+}

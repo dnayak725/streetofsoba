@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-poke-logo">
+      Streets of Soba
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="productsegment">
+  <ion-segment scrollable="true" value="0" mode="ios" [(ngModel)]="segmentModel" (ionChange)="segmentChanged($event)">
+    <ng-container *ngFor="let data of itemData; let i = index">
+      <ion-segment-button value="{{i}}" (click)="itemProducts(i)">
+        <ion-img src="{{data.full_image}}"></ion-img>
+        <ion-label>{{data.category_name}}<br>
+        </ion-label>
+      </ion-segment-button>
+    </ng-container>
+  </ion-segment>
+  <ion-grid *ngIf="segmentModel == tabIndex || segmentModel == this.service.itemIndex">
+    <ion-row class="product-wrapper">
+      <ng-container *ngFor="let data of service.products; let i = index">
+        <ion-col size="4" (click)="productDetails(data.id,data.options)">
+          <ion-img src="{{data.image}}" class="img"></ion-img>
+          <ion-label>{{data.item_name}}</ion-label>
+        </ion-col>
+      </ng-container>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer class="ion-no-border product_footer ">
+  <ion-row class="data-footer">
+    <ion-col size="6">
+      <h1>My order - {{service.dinigLocation}}</h1>
+    </ion-col>
+    <ion-col size="6">
+      <h1 class="ion-text-end">Total: ${{totalValues | number : '1.2-2'}}</h1>
+    </ion-col>
+    <ion-col size="12">
+      <h1 style="font-weight: 500;margin-top: 0px;" *ngIf="service.singleItemCart.length == 0">Your cart is empty</h1>
+      <ion-slides [options]="slideOpts" class="slideOpt">
+        <ng-container *ngFor="let i of itemCart">
+          <ion-slide *ngIf="i.cart == true">
+            <p>{{i.quantity}} × {{i.item_name}}</p>
+          
+          </ion-slide>
+        </ng-container>
+        <ng-container *ngFor="let i of service.singleItemCart">
+       
+          <ion-slide *ngIf="i.cart == true">
+            <p>{{i.quantity}} × {{i.item.item_name}}</p>
+          
+          </ion-slide>
+        </ng-container>
+      
+    
+      </ion-slides>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="6">
+      <ion-button color="medium" expand="full" (click)="startOver()">Start Over</ion-button>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button color="primary" expand="full" (click)="orderList()">View Cart</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

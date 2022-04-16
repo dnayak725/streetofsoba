@@ -1,0 +1,86 @@
+   
+.product-details-header h3{
+    font-size: 50px;
+    font-weight: 700;
+}
+ion-row.product-details-header{
+    padding: 0 70px;
+    margin-top: 30px;
+}
+ion-row.count-prod{
+    padding: 0 15px;
+    margin-top: 15px;
+}
+.count-prod h1{
+    font-size: 30px;
+    font-weight: 400;
+    margin-top: 0px;
+    margin-left: 10px;
+}
+.count-prod h2{
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 0px;
+    margin-left: 10px;
+}
+ion-button.remove {  
+    text-transform: capitalize;
+    font-size: 30px;
+    min-height: 70px;
+    font-weight: 600;
+    border-radius: 15px;
+    letter-spacing: inherit;
+}
+ion-button.view {  
+    text-transform: capitalize;
+    font-size: 30px;
+    min-height: 70px;
+    font-weight: 600;
+    border-radius: 15px;
+    letter-spacing: inherit;
+    background: #fac93c;
+}
+ion-button.view button{
+    --border-radius: 105px!important;
+} 
+.count-prod button {
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    font-weight: 600;
+}
+.count-prod span{
+    font-size: 30px;
+    height: 60px;
+    text-align: center;
+    border: 2px solid #fac93c;
+    margin: 0 10px;
+    border-radius: 10px;
+    color: #fac93c;
+    font-weight: 600;
+    width: 60px;
+    line-height: 54px;
+} 
+ion-row.count-prod {
+    margin-top: 60px;
+    padding-bottom: 60px
+}
+ion-row.count-prod.separator { 
+    border-bottom: 1px solid #fff; 
+}  
+
+ion-row.data-footer { 
+    height: 180px; 
+}
+.data-footer h1 {
+    font-size: 60px; 
+    font-weight: 400;
+}
+ion-item.item {
+    float: right;
+}
+ion-button {
+    --border-radius: 10px;
+    height: 70px;
+}

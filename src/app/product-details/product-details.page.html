@@ -1,0 +1,105 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-poke-logo" (click)="headmain()" >
+      Streets of Soba
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-row class="product-details-header" *ngFor="let i of service.productDetails">
+    <ion-col size="3">
+    
+        <img src="{{i.image}}" style="padding: 5px;">
+     
+    </ion-col>
+    <ion-col>
+      <h3>{{i.item_name}}</h3>
+      <p>{{i.item_desc}}</p>
+    </ion-col>
+  </ion-row>
+  <ion-list class="product-details" lines="none">
+    <ng-container *ngFor="let option of filterOptions">
+      <ion-item>
+        <ion-label class="added" (click)="openOptionModal(option.id,option.item_id,option.is_mandatory)"
+          [ngClass]="option.color_code === '0' && option.is_mandatory === '1' ? 'two' : option.color_code === '0' && option.is_mandatory === '0'  ? 'one' : option.color_code === '0' && option.is_mandatory === '1' ? 'two' : 'three'">
+          <h2><span>{{option.variable_name}}
+
+
+
+            </span>
+            <ng-container *ngIf="option.is_mandatory == '1'">-
+              <ng-container *ngFor="let i of service.productOption">
+                <ng-container *ngIf="i.variable_name == option.variable_name">
+
+                  <ng-container *ngIf="flag == true">,</ng-container>
+                  {{changeflag(true)}}
+
+                  {{i.option_name}}
+
+
+                </ng-container>
+              </ng-container>
+              {{changeflag(false)}}
+            </ng-container>
+            <ng-container *ngFor="let z of service.selectedItem; let index=index">
+              <ng-container *ngIf="z.variable_name == option.variable_name && z.item_id == option.item_id">
+
+                <ng-container *ngIf="separation == false">-
+                  {{x(true)}}
+                </ng-container>
+                 <ng-container *ngIf="flag == true">,</ng-container>
+                {{changeflag(true)}}
+                {{z.option_name }}
+
+              </ng-container>
+          
+
+            </ng-container>
+            {{x(false)}}
+
+            {{changeflag(false)}}
+          </h2>
+        </ion-label>
+      </ion-item>
+    </ng-container>
+
+  </ion-list>
+
+  <ion-row class="count-prod">
+    <ion-col size="6" class="ion-align-self-center">
+      <ng-container *ngFor="let i of service.itemCart">
+        <ng-container *ngIf="i.item_id == productId">
+          <ion-item no-lines lines="none" class="counter">
+            <button ion-button (click)="cartQuantity('-')">
+              <ion-img src="../assets/img/minus.png"></ion-img>
+            </button>
+            <ng-container>
+              <span>
+                {{i.quantity}}
+              </span>
+            </ng-container>
+            <button ion-button (click)="cartQuantity('+')">
+              <ion-img src="../assets/img/plus.png"></ion-img>
+            </button>
+          </ion-item>
+        </ng-container>
+      </ng-container>
+    </ion-col>
+  </ion-row>
+</ion-content>
+<ion-footer class="ion-no-border product_footer ">
+  <ion-row>
+    <ion-col size="6">
+      <ion-button color="medium" expand="full" (click)="backToProduct()">Back</ion-button>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button color="primary" expand="full" (click)="addToCart()">Add to Cart</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>
+
+
+
+
+
+

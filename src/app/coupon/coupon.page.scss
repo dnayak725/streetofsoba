@@ -1,0 +1,37 @@
+.ion-poke-logo{
+    background: url(../../assets/img/banner-11.png) no-repeat right top / 88%;
+    font-size:40px;
+    font-weight: 600;
+    padding:60px 40px;
+}
+.product-details-header{
+    background-color: #FDBB50;
+    margin: 40px 40px;
+    padding: 25px 25px;
+    border-radius: 4px;
+    align-items: center;
+}
+h3{
+    color: #000;
+    font-weight: 600;
+}
+p{
+    color: #000;
+}
+h2{
+    color: #000;
+    font-weight: bold;
+}
+.product_footer ion-col {
+    margin: 0;
+    padding: 0;
+}
+.product_footer ion-col ion-button {
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;
+    font-size: 34px;
+    height: 80px;
+    letter-spacing: inherit;
+    font-weight: 600;
+}

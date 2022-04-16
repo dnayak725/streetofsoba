@@ -1,0 +1,39 @@
+<ion-content>
+  <ion-row class="product-details-header" (click)="mainhead()">
+    <ion-col size="12">
+      <!-- <h3 class="ion-text-center">Snacks and beverages</h3>   -->
+    </ion-col>
+  </ion-row>
+  <ion-row class="count-prod" *ngFor="let i of singleProduct">
+    <ion-col size="3">
+      <ion-img src="{{i.image}}"></ion-img>
+    </ion-col>
+    <ion-col size="5">
+      <h1>{{i.item_name}}</h1>
+      <h2>{{i.basic_price | number : '1.2-2'}}</h2>
+    </ion-col>
+    <ng-container>
+      <ng-container>
+        <ion-col size="4">
+          <ion-item lines="none" class="counter">
+            <ng-container *ngFor="let j of service.singleItemCart">
+              <ng-container *ngIf="i == j.item">
+                <button ion-button (click)="decreament(j.item)"><ion-img src="../assets/img/minus.png"></ion-img></button>
+                <span>{{j.quantity}}</span>
+                <button ion-button (click)="increament(j.item)"><ion-img src="../assets/img/plus.png"></ion-img></button>
+              </ng-container>
+            </ng-container>
+          </ion-item>
+        </ion-col>
+      </ng-container>
+    </ng-container>
+  
+  </ion-row>
+</ion-content>
+
+<ion-footer class="ion-no-border product_footer"> 
+  <ion-row>
+    <ion-col size="6"><ion-button color="light" fill="outline"  class="remove" expand="block" (click)="closeSingleItemModel()">Close</ion-button></ion-col>
+    <ion-col size="6"><ion-button color="primary" class="view" expand="block" (click)="singleProductCart(singleProduct)">Add to Cart</ion-button> </ion-col>
+  </ion-row> 
+</ion-footer>

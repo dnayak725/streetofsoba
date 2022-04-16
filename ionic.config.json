@@ -1,0 +1,7 @@
+{
+  "name": "PokeTheory1",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

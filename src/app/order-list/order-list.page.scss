@@ -1,0 +1,111 @@
+.ion-poke-logo{
+    background: url(../../assets/img/banner-11.png) no-repeat right top / 88%;
+    font-size:40px;
+    font-weight: 600;
+    padding:60px 40px;
+}
+.product_footer ion-col {
+    margin: 0;
+    padding: 0;
+}
+.product_footer ion-col ion-button {
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;
+    font-size: 34px;
+    height: 80px;
+    font-weight: 700;
+    letter-spacing: inherit;
+} 
+.product-details-header h3{
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: inherit;
+}
+ion-row.product-details-header{
+    padding: 0 70px;
+    margin-top: 30px;
+} 
+.count-prod h1, .count-prod h2{
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0px;
+}
+.count-prod h2{ 
+    margin-top: 5px;
+}
+ion-button.remove {  
+    text-transform: capitalize;
+    font-size: 30px;
+    min-height: 70px;
+    font-weight: 600;
+    border-radius: 15px;
+    letter-spacing: inherit;
+}
+ion-button.view {  
+    text-transform: capitalize;
+    font-size: 30px;
+    min-height: 70px;
+    font-weight: 600;
+    border-radius: 15px;
+    background: #FDBB50;
+}
+ion-button.view button{
+    --border-radius: 105px!important;
+}
+.count-prod h1{
+    color: #FDBB50;
+}
+.count-prod button {
+    font-size: 40px;
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+}
+.count-prod span {
+    font-size: 34px;
+    height: 70px;
+    text-align: center;
+    border: 2px solid #FDBB50;
+    margin: 0 10px;
+    border-radius: 10px;
+    color: #FFF6EE;
+    font-weight: 600;
+    width: 70px;
+    line-height: 60px;
+} 
+// ion-row.count-prod {
+//     margin-top: 20px; 
+//     padding: 0 30px 20px 30px;
+// }
+ion-row.count-prod.separator { 
+    border-bottom: 1px solid #fff; 
+    margin: 30px;
+    padding-bottom: 20px;
+}
+.data-footer h1 {
+    font-size: 34px; 
+    font-weight: 400;
+}
+ion-item.item {
+    float: right;
+  
+}
+.item-inner{
+    border-bottom: 0;
+}
+
+.coupon_add{
+    background-color: #FDBB50;
+    padding: 18px;
+    text-align: center;
+    margin: 40px;
+    color: #000;
+    font-weight: bold;
+    border-radius: 2px;
+}
+.discount-span{
+    border: none !important;
+    font-size: 28px !important;
+    text-decoration: line-through;
+}

@@ -1,0 +1,21 @@
+
+// .ion-logo{
+//     margin-top: 100px;
+// }
+.items-page ion-item ion-label {
+    border: 2px solid #FDBB50;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 5px 50px;
+} 
+.items-page .sc-ion-label-md-s h2 {
+    font-weight: 600;
+    font-size: 30px;
+}
+.items-page ion-label:hover, .items-page ion-label:focus {
+    color:#FDBB50;
+    margin: 5px 0;
+}
+ion-list.list-md {
+    margin-top: 50px;
+}

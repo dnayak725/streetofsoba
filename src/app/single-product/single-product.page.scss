@@ -1,0 +1,64 @@
+ion-item.item-checkbox-checked {
+    border: 4px solid #FDBB50;
+    border-radius: 10px;
+}
+.base-modal-header h1{
+    font-size: 30px;
+    margin: 30px 0 20px 0;
+    font-weight: 600;
+}
+.base-modal-header p{
+    font-size: 34px;
+    margin: 10px 0 30px 0;
+}
+.modal-wrapper{
+    height: 40%;
+}
+ion-item.item.md.ion-activatable  {
+    padding: 15px 0;
+}
+.base-modal-body p{
+    font-size: 24px;
+    letter-spacing: inherit;
+    margin:15px 0 30px 0;
+}
+ion-item.item-checkbox-checked ~ p.p-title{
+    color: #FDBB50;
+}
+.base-modal-wrapper ion-button.md.button {
+    height: 90px;
+    overflow: auto;
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: capitalize;
+    border-radius: 20px;
+    padding: 0 10px;
+    letter-spacing: inherit;
+}  
+ion-checkbox.md.in-item.interactive.hydrated {
+    opacity: 0;
+}
+ion-img.ScrollTo {
+    width: 50px;
+    margin: 15px auto;
+}
+ion-button.remove {  
+    text-transform: capitalize;
+    font-size: 30px;
+    min-height: 70px;
+    font-weight: 600;
+    border-radius: 15px;
+    letter-spacing: inherit;
+}
+ion-button.view {  
+    text-transform: capitalize;
+    font-size: 30px;
+    min-height: 70px;
+    font-weight: 600;
+    border-radius: 15px;
+    letter-spacing: inherit;
+    background: #FDBB50;
+}
+ion-button.view button{
+    --border-radius: 105px!important;
+} 

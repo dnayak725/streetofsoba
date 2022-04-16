@@ -1,0 +1,35 @@
+<ion-content>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title class="ion-logo">
+        Streets of Soba
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-row style="margin: 0 60px;">
+  
+    <ion-col size="12">
+      <ion-text color="light">
+        <h3 class="dini-location">Dining Location</h3>
+      </ion-text>
+    </ion-col>
+    <ng-container *ngFor = "let i of diningArray">
+    <ion-col size="6">
+      <ion-card  class="eatin-card" (click)="diningBook(i.dining_title)">
+        <!-- <img src="{{i.dining_img}}" /> -->
+        <h2>{{i.dining_title}}</h2> 
+      </ion-card>
+    </ion-col>
+  </ng-container>
+    <!--<ion-col size="6">
+      <ion-card class="eatin-card"> 
+          <h2>Eat In</h2>
+      </ion-card>
+    </ion-col>
+    <ion-col size="6">
+      <ion-card class="eatin-card">
+          <h2>Take Out</h2>
+      </ion-card>
+    </ion-col>-->
+  </ion-row>
+</ion-content>

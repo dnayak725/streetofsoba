@@ -1,0 +1,120 @@
+<ion-content>
+  <ion-row class="ion-text-center thanku">
+    <ion-col size="12">
+      <h1>THANK YOU FOR YOUR ORDER!</h1>
+      <!-- <p>Your order number is <span>345</span></p> -->
+    </ion-col>
+  </ion-row>
+
+
+  <div id="printer" >
+    <div style="background: #fff !important;
+    min-height: 100%; font-size: 10px !important;
+    color: #000; margin: 2px;
+    border: 1px solid #181818;">
+      <div style="padding-top: 30px;">
+        <ion-row class="ion-text-center">
+          <ion-col size="12">
+            <center>
+              <img src="https://poke-theory.quocent.com/assets/images/poke-theory-white-logo.png"
+                style="height: 50px;" />
+            </center>
+          </ion-col>
+          <center>
+            <ion-col size="12">
+              <h1>Poke Theory</h1>
+            </ion-col>
+            <ion-col size="12">
+              <p>111 Somerset Rd, #1-04, Singapore 238164</p>
+              <p>*Please Make The Payment At The Counter*</p>
+            </ion-col>
+          </center>
+
+        </ion-row>
+      </div>
+      <div style="border-bottom: 1px #000 dashed;
+      border-top: 1px dashed #000;
+      margin-bottom: 30px;">
+        <center>
+          <ion-col size="12">
+            <h2 style="margin: 0;font-weight: 600;font-size: 16px;">{{service.dinigLocation}}</h2>
+          </ion-col>
+        </center>
+      </div>
+      <div style="margin-bottom: 30px;font-size: 10px !important;" *ngFor="let i of service.itemCartFinal">
+        <table  width="100%">
+          <tr>
+            <td>
+              <p style="font-size: 10px;font-weight: 200;">{{i.quantity}} x {{i.item_name}}</p>
+            </td>
+            <td>
+              <p style="text-align: end;font-size: 10px;font-weight: 200;">
+           
+              
+                    {{i.base_price * i.quantity | number}}
+                
+              </p>
+            </td>
+          </tr>
+          
+        </table>
+        <ng-container *ngFor="let j of i.options">
+       
+            <table width="100%">
+              <tr>
+                <td>
+                  <p style="font-size: 10px;">{{i.quantity}} x {{j.option_name}}</p>
+                </td>
+                <td>
+                  <p style="text-align: end;font-size: 10px;">{{i.quantity * j.additional_price}}</p>
+                </td>
+              </tr>
+            </table>
+      
+        </ng-container>
+      </div>
+      <div>
+        <ng-container *ngFor="let i of service.singleItemCart">
+       
+        <table  *ngIf="i.cart == true" width="100%">
+          <tr>
+            <td>
+              <p style="font-size: 10px;font-weight: 200;">{{i.quantity}} x {{i.item.item_name}}</p>
+            </td>
+            <td>
+              <p style="text-align: end;font-size: 10px;font-weight: 200;">{{i.quantity * i.item.basic_price | number : '1.2-2'}}</p>
+            </td>
+          </tr>
+        </table>
+     
+      </ng-container>
+      </div>
+      <div style="border-bottom: 1px #000 dashed;
+      border-top: 1px dashed #000;font-size: 10px !important;
+      margin-bottom: 30px; margin-top: 30px;">
+      <table width="100%">
+        <tr>
+          <td>
+            <h3 style="font-size: 10px;">Total</h3>
+          </td>
+          <td>
+            <h3 style="text-align: end;font-size: 10px;">{{totalValue |number}}</h3>
+          </td>
+        </tr>
+      </table>
+      </div>
+      <div>
+        <ion-row>
+          <ion-col size="12">
+            <center>
+              <p>*Please Make The Payment At The Counter*</p>
+            </center>
+            <p style="margin: 0 0 5px 0; 
+            font-weight: 600;
+            font-size: 10px;">{{date | date: 'dd'}}/{{date | date:'MM'}}/{{date | date: 'yyyy'}} {{date | date: 'HH'}}:{{date | date: 'mm'}}</p>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+  </div>
+</ion-content>

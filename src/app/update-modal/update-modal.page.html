@@ -1,0 +1,90 @@
+<ion-content [scrollEvents]="true" (ionScroll)="logScrolling($event)" class="ion-padding base-modal-wrapper">
+
+  <ion-grid>
+    <ion-row class="ion-text-center base-modal-header">
+      <ion-col size="12">
+        <h1>{{optionsData[0].variable_name}}</h1>
+        <p>Select item({{countSelect}}/{{optionsData[0].select_max}})</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="base-modal-body">
+      <ng-container *ngFor="let modalvalue of optionsData">
+        <ng-container
+        [ngTemplateOutlet]="modalvalue.variable_name === 'Protein' ? first : modalvalue.variable_name=== 
+  'Add Protein' ? second : third">
+  
+     </ng-container>
+     <ng-template #first>
+     
+      <ng-container *ngIf="modalvalue.size_type == ItemOptionselect || modalvalue.size_type==null ">
+        <ion-col size="3" class="ion-text-center" (click)="selectItem(modalvalue)">
+          <ion-item lines="none">
+            <ion-img src="{{modalvalue.option_image}}" class="img"></ion-img> 
+            <ng-container *ngFor="let k of service.selectedItem">
+              <ion-checkbox checked="true" *ngIf="k.id == modalvalue.id"></ion-checkbox>
+            </ng-container>
+          </ion-item>
+          <p class="p-title">{{modalvalue.option_name}} <br>+ ${{modalvalue.additional_price | number : '1.2-2'}}</p>
+        </ion-col>
+      </ng-container>
+      </ng-template>
+      <ng-template #second>
+     
+        <ng-container *ngIf="modalvalue.size_type == ProteinOptionselect">
+          <ion-col size="3" class="ion-text-center" (click)="selectItem(modalvalue)">
+            <ion-item lines="none">
+              <ion-img src="{{modalvalue.option_image}}" class="img"></ion-img> 
+              <ng-container *ngFor="let k of service.selectedItem">
+                <ion-checkbox checked="true" *ngIf="k.id == modalvalue.id"></ion-checkbox>
+              </ng-container>
+            </ion-item>
+            <p class="p-title">{{modalvalue.option_name}} <br>+ ${{modalvalue.additional_price | number : '1.2-2'}}</p>
+          </ion-col>
+        </ng-container>
+        </ng-template>
+        <ng-template #third>
+     
+        
+            <ion-col size="3" class="ion-text-center" (click)="selectItem(modalvalue)">
+              <ion-item lines="none">
+                <ion-img src="{{modalvalue.option_image}}" class="img"></ion-img> 
+                <ng-container *ngFor="let k of service.selectedItem">
+                  <ion-checkbox checked="true" *ngIf="k.id == modalvalue.id"></ion-checkbox>
+                </ng-container>
+              </ion-item>
+              <p class="p-title">{{modalvalue.option_name}} <br>+ ${{modalvalue.additional_price | number : '1.2-2'}}</p>
+            </ion-col>
+        
+          </ng-template>
+</ng-container>
+      <!-- <ion-col size="3" class="ion-text-center"> 
+        <ion-item>
+          <ion-img src="../../assets/img/image.jpg" class="img"></ion-img> 
+          <ion-checkbox ></ion-checkbox>
+        </ion-item> 
+        <p class="p-title">Light (75g)</p>
+      </ion-col>
+      <ion-col size="3" class="ion-text-center"> 
+        <ion-item>
+          <ion-img src="../../assets/img/image.jpg" class="img"></ion-img> 
+          <ion-checkbox ></ion-checkbox>
+        </ion-item> 
+        <p class="p-title">Light (75g)</p>
+      </ion-col> -->
+    </ion-row>
+  </ion-grid>
+  
+</ion-content>
+<ion-footer class="ion-no-border product_footer"> 
+  <ion-row>
+    <ion-col size="12" *ngIf="optionsData.length > 4">
+      <ion-img src="../../assets/img/up-arrow.png" class="ScrollTo" (click)="actionMethod()" *ngIf="showHide"></ion-img> 
+      <ion-img src="../../assets/img/down-arrow.png" class="ScrollTo" (click)="ScrollToTop()" *ngIf="hideShow"></ion-img> 
+    </ion-col>
+    <ion-col size="12" style="padding-bottom:10px;">
+      <ion-button expand="block" (click)="closeModel()"
+      [disabled]="(countSelect == 0 && optionsData[0].variable_name == 'Size') || (countSelect == 0 && optionsData[0].variable_name == 'Protein') || countSelect > optionsData[0].select_max"
+      style="text-transform: capitalize;">Next</ion-button>
+    </ion-col>
+  </ion-row> 
+</ion-footer>
